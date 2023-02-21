@@ -1,0 +1,320 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* CSS Start */
+
+:root {
+  --primary-main-color: hsl(300, 43%, 22%);
+  --primary-soft-color: hsl(333, 80%, 67%);
+
+  --neutral-main: hsl(303, 10%, 53%);
+  --neutral-light: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+
+  --fw-reg: 400;
+  --fw-semi: 500;
+  --fw-bold: 700;
+}
+
+body {
+  background: url(images/bg-pattern-top-desktop.svg) left top no-repeat, url(images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
+  margin: 5rem;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 1150px;
+}
+
+/* Main Info Section */
+
+.self-review {
+  padding-right: 10rem;
+  margin-bottom: 4.5rem;
+}
+
+h1 {
+  color: var(--primary-main-color);
+  font-size: 3.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.top-paragraph {
+  color: var(--neutral-main);
+  font-weight: var(--fw-semi);
+  font-size: 18px;
+}
+
+/* Star Ratings section */
+
+.star-ratings {
+  position: relative;
+  color: var(--primary-main-color);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+}
+
+.reviews {
+  background-color: var(--neutral-light);
+  position: absolute;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 30px;
+  top: 2.5rem;
+}
+
+.guru {
+  background-color: var(--neutral-light);
+  position: absolute;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 30px;
+  top: 7rem;
+  left: 4rem;
+}
+
+.best-tech {
+  background-color: var(--neutral-light);
+  position: absolute;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 40px;
+  top: 11.5rem;
+  left: 8rem;
+}
+
+.star {
+  color: orange;
+  margin: 5px;
+}
+
+.last {
+  margin-right: 2rem;
+}
+
+/* Reviews Section */
+
+.bottom {
+  position: relative;
+}
+
+.testament {
+  background-color: var(--primary-main-color);
+  color: var(--neutral-light);
+  font-weight: var(--fw-semi);
+  font-size: 16px;
+  padding: 1.6rem 2rem;
+  width: 22.5rem;
+  border-radius: 10px;
+}
+
+.name {
+  color: var(--white);
+}
+
+.verified {
+  color: var(--primary-soft-color);
+}
+
+.profile-details {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.profile-pic {
+  height: 2.6rem;
+  border-radius: 100%;
+  margin-right: 1.2rem;
+}
+
+.review-2 {
+  position: absolute;
+  left: 23rem;
+  top: 1rem;
+  margin: 0 1rem;
+}
+
+.review-3 {
+  position: absolute;
+  left: 48rem;
+  top: 2rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 1275px) {
+
+  .self-review {
+    padding-right: 5rem;
+  }
+  
+    .guru {
+    left: 2rem;
+  }
+
+  .best-tech {
+    left: 6rem;
+  }
+
+  .review-2 {
+    left: 21.5rem;
+  }
+
+  .review-3 {
+    left: 45rem;
+  }
+}
+
+@media (max-width: 1208px) {
+
+  .self-review {
+    padding-right: 1rem;
+  }
+
+  .reviews {
+    left: 0rem;
+  }
+
+  .guru {
+    left: 0rem;
+  }
+
+  .best-tech {
+    left: 0rem;
+  }
+
+  .review-2 {
+    position: static;
+  }
+
+  .review-3 {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .guru {
+    padding: 14px 15px;
+  }
+
+  .best-tech {
+    padding: 14px 30px;
+  }
+}
+
+@media (max-width: 990px) {
+  
+  .body {
+    background: url(images/bg-pattern-top-mobile.svg) left top no-repeat, url(images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
+  }
+
+  .self-review {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    padding-top: 3rem;
+    margin-bottom: 0rem;
+  }
+
+  .top-paragraph {
+    margin-top: 1.5rem;
+  }
+
+  .keep-together {
+    white-space: nowrap;
+  }
+
+  .reviews {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .star-ratings {
+    padding: 0;
+  }
+
+  .guru {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .best-tech {
+    position: static;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .review-2 {
+    margin-top: 1rem;
+  }
+}
+
+/* .attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+} */
